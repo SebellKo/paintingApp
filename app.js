@@ -21,6 +21,13 @@ let isPainting = false;
 let isFilling = false;
 
 
+const image = new Image();
+image.src = './img/img.png';
+image.onload = function() {
+    ctx.drawImage(image, 0, 0, CANVAS_WIDTH, 600);
+    fileInput.value = null;
+}
+
 function onMove(event) {
     if(isPainting) {
         ctx.lineTo(event.offsetX, event.offsetY);
